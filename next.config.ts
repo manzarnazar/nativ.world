@@ -9,6 +9,10 @@ const nextConfig: NextConfig = {
         protocol: "https",
         hostname: "dev-estay.thewrteam.in",
       },
+      {
+        protocol: "https",
+        hostname: "admin.nativ.world",
+      },
     ],
   },
   async rewrites() {
