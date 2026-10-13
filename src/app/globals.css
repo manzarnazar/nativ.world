@@ -1,0 +1,588 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
+@config "../../tailwind.config";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+  --color-sidebar-ring: var(--sidebar-ring);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar: var(--sidebar);
+  --color-chart-5: var(--chart-5);
+  --color-chart-4: var(--chart-4);
+  --color-chart-3: var(--chart-3);
+  --color-chart-2: var(--chart-2);
+  --color-chart-1: var(--chart-1);
+  --color-ring: var(--ring);
+  --color-input: var(--input);
+  --color-border: var(--border);
+  --color-destructive: var(--destructive);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-accent: var(--accent);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-muted: var(--muted);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-secondary: var(--secondary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary: var(--primary);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-popover: var(--popover);
+  --color-card-foreground: var(--card-foreground);
+  --color-card: var(--card);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --radius-2xl: calc(var(--radius) + 8px);
+  --radius-3xl: calc(var(--radius) + 12px);
+  --radius-4xl: calc(var(--radius) + 16px);
+}
+
+:root {
+  --radius: 0.625rem;
+  --background: oklch(1 0 0);
+  --foreground: oklch(0.145 0 0);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.145 0 0);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.145 0 0);
+  --primary: oklch(0.205 0 0);
+  --primary-foreground: oklch(0.985 0 0);
+  --secondary: oklch(0.97 0 0);
+  --secondary-foreground: oklch(0.205 0 0);
+  --muted: oklch(0.97 0 0);
+  --muted-foreground: oklch(0.556 0 0);
+  --accent: oklch(0.97 0 0);
+  --accent-foreground: oklch(0.205 0 0);
+  --destructive: oklch(0.577 0.245 27.325);
+  --border: oklch(0.922 0 0);
+  --input: oklch(0.922 0 0);
+  --ring: oklch(0.708 0 0);
+  --chart-1: oklch(0.646 0.222 41.116);
+  --chart-2: oklch(0.6 0.118 184.704);
+  --chart-3: oklch(0.398 0.07 227.392);
+  --chart-4: oklch(0.828 0.189 84.429);
+  --chart-5: oklch(0.769 0.188 70.08);
+  --sidebar: oklch(0.985 0 0);
+  --sidebar-foreground: oklch(0.145 0 0);
+  --sidebar-primary: oklch(0.205 0 0);
+  --sidebar-primary-foreground: oklch(0.985 0 0);
+  --sidebar-accent: oklch(0.97 0 0);
+  --sidebar-accent-foreground: oklch(0.205 0 0);
+  --sidebar-border: oklch(0.922 0 0);
+  --sidebar-ring: oklch(0.708 0 0);
+}
+
+.dark {
+  --background: oklch(0.145 0 0);
+  --foreground: oklch(0.985 0 0);
+  --card: oklch(0.205 0 0);
+  --card-foreground: oklch(0.985 0 0);
+  --popover: oklch(0.205 0 0);
+  --popover-foreground: oklch(0.985 0 0);
+  --primary: oklch(0.922 0 0);
+  --primary-foreground: oklch(0.205 0 0);
+  --secondary: oklch(0.269 0 0);
+  --secondary-foreground: oklch(0.985 0 0);
+  --muted: oklch(0.269 0 0);
+  --muted-foreground: oklch(0.708 0 0);
+  --accent: oklch(0.269 0 0);
+  --accent-foreground: oklch(0.985 0 0);
+  --destructive: oklch(0.704 0.191 22.216);
+  --border: oklch(1 0 0 / 10%);
+  --input: oklch(1 0 0 / 15%);
+  --ring: oklch(0.556 0 0);
+  --chart-1: oklch(0.488 0.243 264.376);
+  --chart-2: oklch(0.696 0.17 162.48);
+  --chart-3: oklch(0.769 0.188 70.08);
+  --chart-4: oklch(0.627 0.265 303.9);
+  --chart-5: oklch(0.645 0.246 16.439);
+  --sidebar: oklch(0.205 0 0);
+  --sidebar-foreground: oklch(0.985 0 0);
+  --sidebar-primary: oklch(0.488 0.243 264.376);
+  --sidebar-primary-foreground: oklch(0.985 0 0);
+  --sidebar-accent: oklch(0.269 0 0);
+  --sidebar-accent-foreground: oklch(0.985 0 0);
+  --sidebar-border: oklch(1 0 0 / 10%);
+  --sidebar-ring: oklch(0.556 0 0);
+}
+
+:root {
+   /* =======================
+     Neutral Colors
+  ========================== */
+  --neutral-50: #FFFFFF;
+  --neutral-100: #F7F7F7;
+  --neutral-200: #EDEDED;
+  --neutral-300: #D9D9D9;
+  --neutral-400: #BFBFBF;
+  --neutral-500: #9E9E9E;
+  --neutral-600: #9E9E9E;
+  --neutral-700: #555555;
+  --neutral-800: #333333;
+  --neutral-900: #1A1A1A;
+  --neutral-950: #000000;
+  /* =======================
+     Fonts
+  ========================== */
+  --font-outfit: 'Outfit', sans-serif;
+
+  /* =======================
+     Text & Hover
+  ========================== */
+  --text-primary-color: var(--neutral-950);
+  --text-secondary-color: var(--neutral-700);
+  --hover-color: var(--primary-600);
+  --body-color: var(--neutral-100);
+}
+
+
+* {
+  scroll-behavior: smooth;
+  font-family: var(--font-outfit);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* this one is added to prevent scollbar hide on shadcn select is active */
+html body[data-scroll-locked] {
+  overflow: visible !important;
+  margin-right: 0 !important;
+}
+
+body {
+  background: var(--body-color);
+  color: var(--text-primary-color);
+}
+
+@media screen and (max-width: 1023px) {
+  body {
+    background: white !important;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+
+@utility bodyBg {
+  background: var(--body-color);
+}
+
+@utility container {
+  @apply between-1400-1620:max-w-[1320px] between-1200-1399:max-w-[1140px] between-992-1199:max-w-[944px] min-1620:!max-w-[1620px];
+}
+
+@utility primaryBg {
+  background: var(--primary-color);
+}
+
+@utility primaryColor {
+  color: var(--primary-color);
+}
+
+@utility primaryLightBg {
+  @apply bg-[var(--primary-100)];
+}
+
+@utility primaryFillColor {
+  color: var(--primary-color);
+  fill: var(--primary-color);
+}
+
+@utility secondaryBg {
+  background: var(--secondary-color);
+}
+
+@utility secondaryColor {
+  color: var(--secondary-color);
+}
+
+@utility hoverBgColor {
+  background: var(--hover-color);
+}
+
+@utility hoverColor {
+  color: var(--hover-color);
+}
+
+@utility errorBg {
+  background: var(--error-color);
+}
+@utility errorLightBg {
+  background: var(--error-50);
+}
+
+@utility errorColor {
+  color: var(--error-color);
+}
+
+@utility warningColor {
+  color: var(--warning-color);
+}
+@utility warningBg {
+  background: var(--warning-color);
+}
+
+@utility textPrimaryColor {
+  color: var(--text-primary-color);
+}
+
+@utility textSecondaryColor {
+  color: var(--text-secondary-color);
+}
+
+@utility flexCenter {
+  @apply flex items-center justify-center;
+}
+
+@utility flexColCenter {
+  @apply flex items-center justify-center flex-col;
+}
+
+@utility primaryBorder {
+  border-color: var(--primary-color);
+}
+
+@utility primaryBorderTop {
+  border-top-color: var(--primary-color);
+}
+
+@utility primaryLightBorderColor {
+  border-color: var(--primary-200);
+}
+
+@utility primaryFont {
+  font-family: var(--font-outfit);
+}
+
+@utility primaryBtn {
+  @apply primaryBg text-white hover:hoverBgColor transition-all duration-300;
+}
+
+@utility secondaryBtn {
+  @apply bg-[#000000] text-white;
+}
+
+@utility btn_outline {
+  @apply border !bg-transparent;
+}
+
+@utility btn_sm {
+  @apply py-1 px-2 rounded-full text-sm;
+}
+
+@utility btn_md {
+  @apply py-2 px-4 rounded-full;
+}
+
+@utility btn_lg {
+  @apply py-3 px-6 rounded-full text-xl;
+}
+
+@utility successBg {
+  background: var(--success-color);
+}
+
+@utility successLightBg {
+  background: var(--success-50);
+}
+
+@utility warningLightBg {
+  background: var(--warning-50);
+}
+
+@utility warningLightBorderColor {
+  border-color: var(--warning-200);
+}
+
+@utility successColor {
+  color: var(--success-color);
+}
+
+@utility successLightBorderColor {
+  border-color: var(--success-200);
+}
+@utility errorLightBorderColor {
+  border-color: var(--error-200);
+}
+
+@utility commonTextGap {
+  @apply flex flex-col sm:gap-6 gap-4;
+}
+
+/* @utility commonMT {
+  @apply xl:mt-[90px] lg:mt-[60px] between-1200-1399:mt-[60px] mt-[40px];
+} */
+@utility commonMT {
+  @apply lg:mt-12 mt-10;
+}
+
+/* @utility commonPY {
+  @apply py-10 md:py-[50px] lg:py-[60px] 2xl:py-[90px];
+} */
+@utility commonPY {
+  @apply lg:py-12 py-10;
+}
+
+@utility headerMT {
+  @apply mt-[66px] sm:mt-[92px] md:mt-[132px] between-1200-1399:mt-[140px] xl:mt-[140px];
+}
+
+/* @utility headerPT {
+  @apply pt-16 sm:pt-24 md:pt-26;
+} */
+@utility headerPT {
+  @apply md:pt-26;
+}
+
+@utility lgFlexCol {
+  @apply flex flex-col lg:flex-row;
+}
+
+@utility commonGap {
+  @apply gap-[30px];
+}
+
+button {
+  cursor: pointer;
+}
+
+
+/* In your global CSS file */
+.rich-text-content {
+  width: 100%;
+}
+
+/* Reset Tailwind's default styling for HTML elements within rich-text-content */
+.rich-text-content h1,
+.rich-text-content h2,
+.rich-text-content h3,
+.rich-text-content h4,
+.rich-text-content h5,
+.rich-text-content h6,
+.rich-text-content p,
+.rich-text-content ul,
+.rich-text-content ol,
+.rich-text-content li,
+.rich-text-content blockquote,
+.rich-text-content pre,
+.rich-text-content a {
+  all: revert;
+  /* This resets all properties to their natural values */
+}
+
+.rich-text-content a {
+  text-decoration: none;
+}
+
+/* Ensure images don't exceed container width */
+.rich-text-content img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Ensure proper spacing between elements */
+.rich-text-content>*:not(:last-child) {
+  margin-bottom: 1em;
+}
+
+/* Ensure images don't exceed container width */
+.rich-text-content img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* custom scrollbar  */
+/* width */
+.customScrollbar::-webkit-scrollbar {
+  width: 4px;
+  height: 6px;
+  display: none;
+  transition: all 0.3s;
+  cursor: pointer;
+}
+
+.customScrollbar:hover::-webkit-scrollbar {
+  display: block;
+}
+
+/* Track */
+.customScrollbar::-webkit-scrollbar-track {
+  border-radius: 12px;
+}
+
+/* Handle */
+.customScrollbar::-webkit-scrollbar-thumb {
+  background: var(--primary-color);
+  border-radius: 10px;
+}
+
+.fill-primary{
+  fill: var(--primary-color) !important;
+}
+
+.rdp-month_grid{
+  width: 100%;
+}
+
+/* ─── react-phone-input-2 ─────────────────────────────────────────────── */
+.react-tel-input {
+  border: 1px solid #d1d5db;
+  border-radius: 0.5rem;
+  transition: border-color 0.2s;
+  overflow-x: hidden !important;
+  overflow-y: visible !important;
+}
+
+.react-tel-input:focus-within {
+  border-color: var(--primary-color) !important;
+  box-shadow: 0 0 0 1px var(--primary-color);
+}
+
+.react-tel-input .form-control {
+  height: 46px !important;
+  border: none !important;
+  border-radius: 0.5rem !important;
+  box-shadow: none !important;
+  overflow-x: hidden !important;
+  overflow-y: visible !important;
+}
+
+.react-tel-input .flag-dropdown {
+  border: none !important;
+  border-right: 1px solid #d1d5db !important;
+  border-radius: 0.5rem 0 0 0.5rem !important;
+  background: transparent !important;
+}
+
+.react-tel-input .selected-flag {
+  border-radius: 0.5rem 0 0 0.5rem !important;
+}
+
+.react-tel-input .selected-flag:hover{
+  background-color: transparent !important;
+}
+
+.react-tel-input .selected-flag:hover,
+.react-tel-input .selected-flag:focus,
+.react-tel-input .selected-flag.open {
+  background-color: transparent !important;
+}
+
+.react-tel-input.phone-input-error {
+  border-color: var(--error-color) !important;
+}
+
+.react-tel-input.phone-input-error .form-control {
+  border-radius: 0.5rem !important;
+}
+
+.react-tel-input.phone-input-error .flag-dropdown {
+  border-right-color: var(--error-color) !important;
+}
+.react-tel-input.phoneCustomInput {
+  overflow: visible !important;
+}
+
+.requireInput::after {
+  color: var(--error-color);
+  content: "*";
+  margin-left: 4px;
+}
+
+[dir="rtl"] .requireInput::after {
+  margin-left: 0;
+  margin-right: 4px;
+}
+
+[dir="rtl"] .react-tel-input .form-control{
+  text-align: end !important;
+  padding-left: 0px!important;
+  padding-right: 48px!important;
+}
+
+[dir="rtl"] .react-tel-input .selected-flag{
+  padding: 0px !important;
+  padding-right: 20px !important;
+}
+
+[dir="rtl"] .react-tel-input .selected-flag .arrow{
+  left: 12px !important;
+}
+
+[dir="rtl"] .react-tel-input .flag-dropdown{
+  border-radius: 6px !important;
+}
+
+.react-tel-input .country-list{
+  z-index: 999999 !important;
+  background-color: var(--body-color) !important;
+}
+
+
+
+@media screen and (min-width: 1620px) and (max-width: 1779px) {
+  .container {
+    padding-inline: 50px;
+  }
+}
+
+
+@media screen and (min-width: 768px) and (max-width: 824px) {
+  .container {
+    max-width: 44rem !important;
+  }
+}
+
+/* Property map view — OpenStreetMap/Leaflet popup styling */
+.property-map-popup .leaflet-popup-content-wrapper {
+  padding: 0;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.18);
+  z-index: 999999;
+}
+
+.property-map-popup .leaflet-popup-content {
+  margin: 0;
+}
+
+.property-map-popup .leaflet-popup-tip-container {
+  overflow: visible;
+}
+
+/* Nearby-places map view — OpenStreetMap/Leaflet popup styling */
+.place-map-popup .leaflet-popup-content-wrapper {
+  background: transparent;
+  padding: 0;
+  border-radius: 0;
+  box-shadow: none;
+}
+
+.place-map-popup .leaflet-popup-content {
+  margin: 0;
+}
+
+.place-map-popup .leaflet-popup-tip-container {
+  display: none;
+}
