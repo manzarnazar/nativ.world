@@ -3,7 +3,7 @@
 import { useEffect, useState } from 'react'
 import { X, Download, Share } from 'lucide-react'
 import Image from 'next/image'
-import logo from '@/assets/images/eStay.svg'
+import logo from '@/assets/images/logo.png'
 
 interface BeforeInstallPromptEvent extends Event {
   prompt: () => Promise<void>
@@ -77,13 +77,13 @@ export default function InstallPrompt() {
       <div className="flex items-center gap-3 rounded-2xl bg-white px-4 py-3 shadow-lg border border-gray-100">
         <Image
           src={logo}
-          alt="eStay"
+          alt="Nativ World"
           width={40}
           height={40}
           className="rounded-xl shrink-0 object-contain"
         />
         <div className="flex-1 min-w-0">
-          <p className="text-sm font-semibold text-gray-900 leading-tight">Install eStay</p>
+          <p className="text-sm font-semibold text-gray-900 leading-tight">Install Nativ World</p>
           {isIOSDevice ? (
             <p className="text-xs text-gray-500 mt-0.5 leading-tight">
               Tap <Share size={11} className="inline mb-0.5" /> then &ldquo;Add to Home Screen&rdquo;
